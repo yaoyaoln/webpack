@@ -1,0 +1,18 @@
+//  把一些高级的语法es6转换成浏览器都支持的代码
+// 先安装插件，在配置rules，最后再建立.babelrc配置文件
+{ 
+    "presets": ["@babel/preset-env"],
+    "plugins": ["@babel/plugin-transform-runtime",
+                "@babel/plugin-proposal-class-properties",
+                ["component", 
+                    {
+                      "libraryName": "mint-ui",
+                      "style": true
+                    }
+                  ],"transform-remove-strict-mode"
+
+
+            ],
+     "ignore": [ "./src/lib/js/mui.min.js" ]//导入min中的js文件的时候需要去除严格模式，先安装
+     //npm install babel-plugin-syntax-dynamic-import -D,再设置这里的ignore
+}
